@@ -2,7 +2,6 @@
 <Project>
   <Target Name="UpdateBuildTimestamp" BeforeTargets="BeforeBuild">
     <PropertyGroup>
-      <OriginalFileContent>$([System.IO.File]::ReadAllText('$(MSBuildProjectDirectory)\PluginInfo.cs'))</OriginalFileContent>
       <Pattern>public const string BuildTimestamp = ".*?";</Pattern>
       <Replacement>public const string BuildTimestamp = "$(BuildTimestamp)";</Replacement>
       <UpdatedFileContent>$([System.Text.RegularExpressions.Regex]::Replace($(OriginalFileContent), $(Pattern), $(Replacement)))</UpdatedFileContent>

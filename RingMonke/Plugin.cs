@@ -11,15 +11,16 @@
         private void OnGameInit()
         {
             System.Console.Title = $"RingMonke {BasicVariables.VersionLocal}";
-            UnityEngine.Debug.Log($"Ring Monke | Version {BasicVariables.VersionLocal}");      
-        }                         
+            UnityEngine.Debug.Log($"RingMonke | Version {BasicVariables.VersionLocal}");
+        }
         private void SummonError(string issue)
         {
             bool Flag = issue == null;
             if (!Flag)
             {
                 GorillaNetworking.GorillaComputer.instance.GeneralFailureMessage(issue);
-                Photon.Pun.PhotonNetwork.Disconnect();
+                //Photon.Pun.PhotonNetwork.Disconnect();
+                NetworkSystem.Instance.ReturnToSinglePlayer();
                 BasicVariables.DisconnectFromNetwork();
             }
         }

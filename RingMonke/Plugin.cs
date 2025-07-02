@@ -20,10 +20,9 @@
             {
                 GorillaNetworking.GorillaComputer.instance.GeneralFailureMessage(issue);
                 //Photon.Pun.PhotonNetwork.Disconnect();
-                NetworkSystem.Instance.ReturnToSinglePlayer();
                 BasicVariables.DisconnectFromNetwork();
             }
         }
     }
 }
-//rah
+//rah raho
